@@ -1,0 +1,51 @@
+.patient-basic-information-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding-top: 5%;
+  column-gap: 20px;
+}
+
+.patient-detailed-information-container{
+  display: grid;
+  align-content: center;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  padding-top: 5%;
+  grid-template-columns: auto auto auto auto auto auto;
+  column-gap: 16px;
+  row-gap: 10px;
+}
+
+.patient-blood-pressure-container{
+  display: grid;
+  align-content: center;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  padding-top: 5%;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 16px;
+  row-gap: 10px;
+}
+
+.patient-header{
+  text-align:center;
+}
+
+.patient-information-container{
+  display: flex;
+  flex-direction: column;
+}
+
+button{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+

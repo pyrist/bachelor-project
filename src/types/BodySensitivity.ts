@@ -1,0 +1,34 @@
+export interface BodySensitivity {
+  id: number;
+  movement_of_the_extremities_left_arm: number;
+  movement_of_the_extremities_left_arm_assessment_exam_dest: number;
+  movement_of_the_extremities_left_leg: number;
+  movement_of_the_extremities_left_leg_assessment_exam_dest: number;
+  movement_of_the_extremities_right_arm_assessment_exam_dest: number;
+  movement_of_the_extremities_right_leg_assessment_exam_dest: number;
+  sensibility_left_arm_assessment_exam_dest: number;
+  sensibility_left_leg_assessment_exam_dest: number;
+  sensibility_right_arm_assessment_exam_dest: number;
+  sensibility_right_leg_assessment_exam_dest: number;
+  movement_of_the_extremities_right_arm: number;
+  movement_of_the_extremities_right_leg: number;
+  sensibility_left_arm: number;
+  sensibility_left_leg: number;
+  sensibility_right_arm: number;
+  sensibility_right_leg: number;
+  pupil_left_assessment_exam_dest_middle: number;
+  pupil_left_assessment_exam_dest_narrow: number;
+  pupil_left_assessment_exam_dest_wide: number;
+  pupil_left_assessment_exam_dest_not_determinable: number;
+  pupil_left_assessment_exam_dest_dyscoria: number;
+  pupil_right_assessment_exam_dest_middle: number;
+  pupil_right_assessment_exam_dest_narrow: number;
+  pupil_right_assessment_exam_dest_wide: number;
+  pupil_right_assessment_exam_dest_not_determinable: number;
+  pupil_right_assessment_exam_dest_dyscoria: number;
+  pupil_right_not_determinable: number;
+  pupil_left_not_determinable: number;
+  normal_table_result: number;
+  abnormal_table_result: number;
+  severe_table_result: number;
+}

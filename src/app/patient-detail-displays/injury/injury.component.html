@@ -1,0 +1,155 @@
+<div class="header"><h1>- INJURY -</h1></div>
+<div class="patient-detail-container">
+  <div class="patient-detail-box-container" *ngIf="injury?.wound_size != null">
+    <div class="patient-detail-box-description-container">
+      <h2>Wound size(s):</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2>{{arrayToString(injury?.wound_size) + ' cm'}}</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.wound_size != null">
+    <div class="patient-detail-box-description-container">
+      <h2>Burn percentage(s):</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2>{{arrayToString(injury?.burn_percentage) + '%'}}</h2>
+    </div>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="injury?.summary_hemostasis != null">
+    <h2>(Original text) Hemostasis summary:</h2>
+    <h2>{{injury?.summary_hemostasis}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="injury?.other_text != null">
+    <h2>(Original text) Other notes:</h2>
+    <h2>{{injury?.other_text}}</h2>
+  </div>
+
+  <div class="patient-large-comment-box-container" *ngIf="injury?.comment_injury_reason != null">
+    <h2>(Original text) Injury cause:</h2>
+    <h2>{{injury?.comment_injury_reason}}</h2>
+  </div>
+
+  <app-simple-variable-display *ngIf="injury?.injury_type != null" [description]="'(Original text) Injury type:'" [input]="injury?.injury_type"></app-simple-variable-display>
+
+  <div class="patient-comment-box-container" *ngIf="injury?.naca != 0">
+    <h2>NACA score:</h2>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.naca == 1">NACA I - Minor injury</h2>
+      <h2 *ngIf="injury?.naca == 2">NACA II - Slight to moderate injury</h2>
+      <h2 *ngIf="injury?.naca == 3">NACA III - Moderate to severe injury, but not life-threatening</h2>
+      <h2 *ngIf="injury?.naca == 4">NACA IV - Serious injury that can rapidly become life-threatening</h2>
+      <h2 *ngIf="injury?.naca == 5">NACA V - Acute, life-threatening danger</h2>
+      <h2 *ngIf="injury?.naca == 6">NACA VI - Respiratory and/or cardiac arrest</h2>
+      <h2 *ngIf="injury?.naca == 7">NACA VII - Death</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.bleeding_staunched_by_bandage == 1 || injury?.bleeding_staunched_by_pelvic_belt == 1 || injury?.bleeding_staunched_by_tourniquet == 1 || injury?.bleeding_staunched_by_quikclot == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Bleeding staunched by:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.bleeding_staunched_by_bandage == 1">Bandages</h2>
+      <h2 *ngIf="injury?.bleeding_staunched_by_tourniquet == 1">Tourniquet</h2>
+      <h2 *ngIf="injury?.bleeding_staunched_by_pelvic_belt == 1">Pelvic belt</h2>
+      <h2 *ngIf="injury?.bleeding_staunched_by_quikclot == 1">Quikclot</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.circulation_none == 1 || injury?.circulation_normal == 1 || injury?.circulation_reduced == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Circulation status:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.circulation_normal == 1">Normal</h2>
+      <h2 *ngIf="injury?.circulation_reduced == 1">Reduced</h2>
+      <h2 *ngIf="injury?.circulation_none == 1">None</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.motoric_none == 1 || injury?.motoric_normal == 1 || injury?.motoric_reduced == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Motor status:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.motoric_normal == 1">Normal</h2>
+      <h2 *ngIf="injury?.motoric_reduced == 1">Reduced</h2>
+      <h2 *ngIf="injury?.motoric_none == 1">None</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.wound_closed == 1 || injury?.wound_open == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Wound status:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.wound_open == 1">Open</h2>
+      <h2 *ngIf="injury?.wound_closed == 1">Closed</h2>
+    </div>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="injuryDescriptors != ''">
+    <h2>Injury descriptors:</h2>
+    <div class="patient-detail-box-information-container">
+      <h2>{{injuryDescriptors}}</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.amputation_detail_total == 1 || injury?.amputation_detail_subtotal == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Amputation:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.amputation_detail_total == 1">Total</h2>
+      <h2 *ngIf="injury?.amputation_detail_subtotal == 1">Partial</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.severity != 0">
+    <div class="patient-detail-box-description-container">
+      <h2>Severity:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.severity == 1">Minor</h2>
+      <h2 *ngIf="injury?.severity == 2">Moderate</h2>
+      <h2 *ngIf="injury?.severity == 3">Severe</h2>
+      <h2 *ngIf="injury?.severity == 4">Life-threatening</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.location_extremities == 1 || injury?.location_head == 1 || injury?.location_throat == 1 || injury?.location_upper_torso == 1 || injury?.location_lower_torso == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Injury location:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.location_extremities == 1">Extremities</h2>
+      <h2 *ngIf="injury?.location_head == 1">Head</h2>
+      <h2 *ngIf="injury?.location_throat == 1">Throat</h2>
+      <h2 *ngIf="injury?.location_upper_torso == 1">Upper torso</h2>
+      <h2 *ngIf="injury?.location_lower_torso == 1">Lower torso</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="injury?.burn_degree != 0">
+    <div class="patient-detail-box-description-container">
+      <h2>Burn/frostbite degree:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="injury?.burn_degree == 1">First</h2>
+      <h2 *ngIf="injury?.burn_degree == 2">Second</h2>
+      <h2 *ngIf="injury?.burn_degree == 3">Third</h2>
+      <h2 *ngIf="injury?.burn_degree == 4">Fourth</h2>
+    </div>
+  </div>
+
+  <app-simple-yes-no-detail-display *ngIf="injury?.spine_trauma_details_with_neurology == 1" [description]="'Spine trauma with neurology:'" [input]="injury?.spine_trauma_details_with_neurology"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display *ngIf="injury?.spine_trauma_details_without_neurology == 1" [description]="'Spine trauma without neurology:'" [input]="injury?.spine_trauma_details_without_neurology"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Bandages applied:'" [input]="injury?.bandages_applied"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Pain noted:'" [input]="injury?.pain_noted"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Ruled out fracture:'" [input]="injury?.ruled_out_fracture"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Injury caused by fall:'" [input]="injury?.injury_caused_by_fall"></app-simple-yes-no-detail-display>
+</div>

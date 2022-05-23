@@ -1,0 +1,66 @@
+<div class="header"><h1>- MENTAL CONDITION -</h1></div>
+<div class="patient-detail-container">
+  <app-simple-variable-display *ngIf="conditionMental?.mean_arterial_pressure != null" [description]="'Inpatient mean arterial pressure:'" [input]="conditionMental?.mean_arterial_pressure"></app-simple-variable-display>
+  <app-simple-variable-display *ngIf="conditionMental?.mean_arterial_pressure_destination != null" [description]="'Mean arterial pressure at location:'" [input]="conditionMental?.mean_arterial_pressure_destination"></app-simple-variable-display>
+  <app-simple-variable-display *ngIf="conditionMental?.total_gcs != null" [description]="'Inpatient total GCS score:'" [input]="conditionMental?.total_gcs"></app-simple-variable-display>
+  <app-simple-variable-display *ngIf="conditionMental?.total_gcs_destination != null" [description]="'Total GCS score at destination:'" [input]="conditionMental?.total_gcs_destination"></app-simple-variable-display>
+
+  <app-simple-yes-no-detail-display [description]="'Intoxicated (drugs):'" [input]="conditionMental?.intoxicated_drugs"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Intoxicated (alcohol):'" [input]="conditionMental?.intoxicated_alcohol"></app-simple-yes-no-detail-display>
+
+  <div class="patient-detail-box-container" *ngIf="conditionMental?.fast_face_yes == 1 || conditionMental?.fast_face_no == 1 || conditionMental?.fast_face_unknown == 1 || conditionMental?.fast_face_left == 1 || conditionMental?.fast_face_right == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Fast face:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="conditionMental?.fast_face_yes == 1"><mat-icon>check</mat-icon></h2>
+      <h2 *ngIf="conditionMental?.fast_face_no == 1"><mat-icon>close</mat-icon></h2>
+      <h2 *ngIf="conditionMental?.fast_face_unknown == 1">Unknown</h2>
+      <h2 *ngIf="conditionMental?.fast_face_left == 1">Left</h2>
+      <h2 *ngIf="conditionMental?.fast_face_right == 1">Right</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="conditionMental?.fast_arms_yes == 1 || conditionMental?.fast_arms_no == 1 || conditionMental?.fast_arms_unknown == 1 || conditionMental?.fast_arms_left == 1 || conditionMental?.fast_arms_right == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Fast arms:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="conditionMental?.fast_arms_yes == 1"><mat-icon>check</mat-icon></h2>
+      <h2 *ngIf="conditionMental?.fast_arms_no == 1"><mat-icon>close</mat-icon></h2>
+      <h2 *ngIf="conditionMental?.fast_arms_unknown == 1">Unknown</h2>
+      <h2 *ngIf="conditionMental?.fast_arms_left == 1">Left</h2>
+      <h2 *ngIf="conditionMental?.fast_arms_right == 1">Right</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="conditionMental?.fast_speech_yes == 1 || conditionMental?.fast_speech_no == 1 || conditionMental?.fast_speech_unknown == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Fast speech:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="conditionMental?.fast_speech_yes == 1"><mat-icon>check</mat-icon></h2>
+      <h2 *ngIf="conditionMental?.fast_speech_no == 1"><mat-icon>close</mat-icon></h2>
+      <h2 *ngIf="conditionMental?.fast_speech_unknown == 1">Unknown</h2>
+    </div>
+  </div>
+
+  <app-simple-variable-display [description]="'Psychological status:'" [input]="psycheStatus"></app-simple-variable-display>
+
+  <app-simple-yes-no-detail-display [description]="'Unconscious:'" [input]="conditionMental?.unconscious"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Drowsy:'" [input]="conditionMental?.drowsy"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Communication difficult / not possible:'" [input]="conditionMental?.communication_difficult_or_not_possible"></app-simple-yes-no-detail-display>
+
+  <div class="patient-detail-box-container" *ngIf="conditionMental?.sensibility != null">
+    <div class="patient-detail-box-description-container">
+      <h2>Sensibility:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="conditionMental?.sensibility == 1">None</h2>
+      <h2 *ngIf="conditionMental?.sensibility == 2">Reduced</h2>
+      <h2 *ngIf="conditionMental?.sensibility == 3">Normal</h2>
+    </div>
+  </div>
+
+  <app-table-result-display [normal]="conditionMental?.normal_table_result" [abnormal]="conditionMental?.abnormal_table_result" [severe]="conditionMental?.severe_table_result"></app-table-result-display>
+</div>

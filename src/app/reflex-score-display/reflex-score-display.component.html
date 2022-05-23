@@ -1,0 +1,10 @@
+<div *ngIf="input!=0" class="patient-detail-box-container">
+  <div class="patient-detail-box-description-container">
+    <h2>{{description}}</h2>
+  </div>
+  <div class="patient-detail-box-information-container">
+    <h2 *ngIf="input==1">Prompt</h2>
+    <h2 *ngIf="input==2">Slow</h2>
+    <h2 *ngIf="input==3">None</h2>
+  </div>
+</div>

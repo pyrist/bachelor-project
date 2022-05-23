@@ -1,0 +1,14 @@
+<div class="patient-detail-box-container" *ngIf="sys != null && dia != null">
+  <div class="patient-detail-box-description-container">
+    <h2>{{ description }}</h2>
+  </div>
+  <h2>
+    <div class="frac">
+      <span>{{sys}}</span>
+      <span class="symbol">/</span>
+      <span class="bottom">{{dia}} </span>
+    </div>
+  </h2>
+</div>
+
+

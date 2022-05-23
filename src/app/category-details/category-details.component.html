@@ -1,0 +1,12 @@
+<div class ="category-details-container">
+  <h1>{{category?.name}}</h1>
+  <h2>Relevant features:</h2>
+  <div class="bullet-point-container">
+    <ul>
+      <li *ngFor="let attribute of category?.relevantFeaturesStringList?.split(',')">{{attribute}}</li>
+    </ul>
+  </div>
+  <button (click)="retrieveCsv(category?.linkname)">Download .csv</button>
+  <ng-http-loader></ng-http-loader>
+</div>
+

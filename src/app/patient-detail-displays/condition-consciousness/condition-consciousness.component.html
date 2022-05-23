@@ -1,0 +1,70 @@
+<div class="header"><h1>- CONSCIOUSNESS -</h1></div>
+<div class="patient-detail-container">
+  <div *ngIf="conditionConsciousness?.pain_scale_assess_vital_signs_destination != null" class="patient-detail-box-container">
+    <div class="patient-detail-box-information-container">
+      <h2>Pain score at destination:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2>{{conditionConsciousness?.pain_scale_assess_vital_signs_destination}}/10</h2>
+    </div>
+  </div>
+
+  <app-reflex-score-display *ngIf="conditionConsciousness?.light_reflex_left != 0" [description]="'Inpatient left eye light reflex:'" [input]="conditionConsciousness?.light_reflex_left"></app-reflex-score-display>
+  <app-reflex-score-display *ngIf="conditionConsciousness?.light_reflex_right != 0" [description]="'Inpatient right eye light reflex:'" [input]="conditionConsciousness?.light_reflex_right"></app-reflex-score-display>
+  <app-reflex-score-display *ngIf="conditionConsciousness?.light_reflex_left_assessment_exam_dest != 0" [description]="'Left eye light reflex at location:'" [input]="conditionConsciousness?.light_reflex_left_assessment_exam_dest"></app-reflex-score-display>
+  <app-reflex-score-display *ngIf="conditionConsciousness?.light_reflex_right_assessment_exam_dest != 0" [description]="'Right eye light reflex at location:'" [input]="conditionConsciousness?.light_reflex_right_assessment_exam_dest"></app-reflex-score-display>
+
+  <app-pupil-detail-display *ngIf="conditionConsciousness?.pupil_left_eyes_dyscoria == 1 || conditionConsciousness?.pupil_left_eyes_middle == 1 || conditionConsciousness?.pupil_left_eyes_wide == 1 || conditionConsciousness?.pupil_left_eyes_narrow == 1" [description]="'Left pupil status:'"
+                            [dyscoria]="conditionConsciousness?.pupil_left_eyes_dyscoria"
+                            [middle]="conditionConsciousness?.pupil_left_eyes_middle"
+                            [wide]="conditionConsciousness?.pupil_left_eyes_wide"
+                            [narrow]="conditionConsciousness?.pupil_left_eyes_narrow"></app-pupil-detail-display>
+
+  <app-pupil-detail-display *ngIf="conditionConsciousness?.pupil_right_eyes_dyscoria == 1 || conditionConsciousness?.pupil_right_eyes_middle == 1 || conditionConsciousness?.pupil_right_eyes_wide == 1 || conditionConsciousness?.pupil_right_eyes_narrow == 1" [description]="'Right pupil status:'"
+                            [dyscoria]="conditionConsciousness?.pupil_right_eyes_dyscoria"
+                            [middle]="conditionConsciousness?.pupil_right_eyes_middle"
+                            [wide]="conditionConsciousness?.pupil_right_eyes_wide"
+                            [narrow]="conditionConsciousness?.pupil_right_eyes_narrow"></app-pupil-detail-display>
+
+  <div *ngIf="!allStateOfConsciousnessZero" class="patient-detail-box-container">
+    <div class="patient-detail-box-information-container">
+      <h2>State of consciousness:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="conditionConsciousness?.state_of_consciousness_awake == 1">Awake</h2>
+      <h2 *ngIf="conditionConsciousness?.state_of_consciousness_unconscious == 1">Unconscious</h2>
+      <h2 *ngIf="conditionConsciousness?.state_of_consciousness_reacts_to_speech == 1">Reacts to speech</h2>
+      <h2 *ngIf="conditionConsciousness?.state_of_consciousness_reacts_to_pain == 1">Reacts to pain</h2>
+      <h2 *ngIf="conditionConsciousness?.state_of_consciousness_under_general_anesthetic == 1">Under general anesthetic</h2>
+      <h2 *ngIf="conditionConsciousness?.state_of_consciousness_not_determinable == 1">Not determinable</h2>
+    </div>
+  </div>
+
+  <div *ngIf="conditionConsciousness?.gcs_eye_assessment != null" class="patient-detail-box-container">
+    <div class="patient-detail-box-information-container">
+      <h2>GCS eye assessment score:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2>{{conditionConsciousness?.gcs_eye_assessment}}/4</h2>
+    </div>
+  </div>
+
+  <div *ngIf="conditionConsciousness?.gcs_verbal_assessment != null" class="patient-detail-box-container">
+    <div class="patient-detail-box-information-container">
+      <h2>GCS verbal assessment score:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2>{{conditionConsciousness?.gcs_verbal_assessment}}/5</h2>
+    </div>
+  </div>
+
+  <div *ngIf="conditionConsciousness?.gcs_motor_assessment != null" class="patient-detail-box-container">
+    <div class="patient-detail-box-information-container">
+      <h2>GCS motor assessment score:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2>{{conditionConsciousness?.gcs_motor_assessment}}/6</h2>
+    </div>
+  </div>
+  <app-table-result-display [normal]="conditionConsciousness?.normal_table_result" [abnormal]="conditionConsciousness?.abnormal_table_result" [severe]="conditionConsciousness?.severe_table_result"></app-table-result-display>
+</div>

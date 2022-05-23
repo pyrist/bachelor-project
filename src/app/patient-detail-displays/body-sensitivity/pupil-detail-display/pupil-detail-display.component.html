@@ -1,0 +1,12 @@
+<div class="patient-detail-box-container">
+  <div class="patient-detail-box-description-container">
+    <h2>{{description}}</h2>
+  </div>
+  <div class="patient-detail-box-information-container">
+    <h2 *ngIf="notDeterminable == 1">Not determinable</h2>
+    <h2 *ngIf="dyscoria == 1">Dyscoria</h2>
+    <h2 *ngIf="middle == 1">Normal</h2>
+    <h2 *ngIf="narrow == 1">Narrow</h2>
+    <h2 *ngIf="wide == 1">Wide</h2>
+  </div>
+</div>

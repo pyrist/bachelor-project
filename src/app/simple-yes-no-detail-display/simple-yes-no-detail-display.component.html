@@ -1,0 +1,9 @@
+<div class="patient-detail-box-container">
+  <div class="patient-detail-box-description-container">
+    <h2>{{description}}</h2>
+  </div>
+  <div class="patient-detail-box-information-container">
+    <h2 *ngIf="input == 1"><mat-icon>check</mat-icon></h2>
+    <h2 *ngIf="input == 0"><mat-icon>close</mat-icon></h2>
+  </div>
+</div>

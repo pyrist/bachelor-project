@@ -1,0 +1,21 @@
+<div class="header"><h1>- BLOOD PRESSURE -</h1></div>
+<div class="patient-detail-container">
+  <app-blood-pressure-display *ngIf="bloodPressure?.sbp != null" [description]="'Inpatient blood pressure:'" [sys]="bloodPressure?.sbp" [dia]="bloodPressure?.dbp"></app-blood-pressure-display>
+  <app-blood-pressure-display *ngIf="bloodPressure?.sbp_assess_vital_signs_destination != null" [description]="'Blood pressure at location:'" [sys]="bloodPressure?.sbp_assess_vital_signs_destination" [dia]="bloodPressure?.dbp_assess_vital_signs_destination"></app-blood-pressure-display>
+  <app-blood-pressure-display *ngIf="bloodPressure?.ibp_sys != null" [description]="'Invasive inpatient blood pressure:'" [sys]="bloodPressure?.ibp_sys" [dia]="bloodPressure?.ibp_dia"></app-blood-pressure-display>
+  <app-blood-pressure-display *ngIf="bloodPressure?.ibp_sys_assess_vital_signs_destination != null" [description]="'Invasive blood pressure at location:'" [sys]="bloodPressure?.ibp_sys_assess_vital_signs_destination" [dia]="bloodPressure?.ibp_dia_assess_vital_signs_destination"></app-blood-pressure-display>
+  <div class="patient-detail-box-container" *ngIf="bloodPressure?.low_blood_pressure == 1 || bloodPressure?.high_blood_pressure != 0 || bloodPressure?.normal_blood_pressure==1">
+    <div class="patient-detail-box-description-container">
+      <h2>Blood pressure evaluation:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="bloodPressure?.low_blood_pressure==1">Low</h2>
+      <h2 *ngIf="bloodPressure?.normal_blood_pressure==1">Normal</h2>
+      <h2 *ngIf="bloodPressure?.high_blood_pressure==1">Stage 1 hypertension</h2>
+      <h2 *ngIf="bloodPressure?.high_blood_pressure==2">Stage 2 hypertension</h2>
+      <h2 *ngIf="bloodPressure?.high_blood_pressure==3">Hypertensive crisis</h2>
+    </div>
+  </div>
+
+  <app-table-result-display [normal]="bloodPressure?.normal_table_result" [abnormal]="bloodPressure?.abnormal_table_result" [severe]="bloodPressure?.severe_table_result"></app-table-result-display>
+</div>

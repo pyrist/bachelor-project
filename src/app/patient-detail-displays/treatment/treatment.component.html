@@ -1,0 +1,110 @@
+<div class="header"><h1>- TREATMENT -</h1></div>
+<div class="patient-detail-container">
+  <div class="patient-large-comment-box-container" *ngIf="medications != null">
+    <h2>Medications given:</h2>
+    <h2>
+      <div class="medication-container" *ngFor="let medication of medications">
+        <h2><span *ngIf="medication[0] != null">{{medication[0]}}</span>
+        <span *ngIf="medication[1] != null"> ({{medication[1]}})</span>
+        <span *ngIf="medication[2] != null">, ID: {{medication[2]}}</span></h2>
+        <h2><span *ngIf="medication[3] != null">Dosage: {{medication[3]}}</span>
+        <span *ngIf="medication[4] != null">, Amount given: {{medication[4]}} </span></h2>
+      </div>
+    </h2>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="treatment?.pain_not_required == 1 || treatment?.pain_not_required_not_medically_measurable == 1 || treatment?.pain_not_required_not_relevant == 1 || treatment?.pain_not_required_not_technically_measurable == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Pain measurement not required:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="treatment?.pain_not_required == 1 && treatment?.pain_not_required_not_technically_measurable == 0
+              && treatment?.pain_not_required_not_relevant == 0 && treatment?.pain_not_required_not_medically_measurable == 0">No reason given</h2>
+      <h2 *ngIf="treatment?.pain_not_required_not_technically_measurable == 1">Not technically measurable</h2>
+      <h2 *ngIf="treatment?.pain_not_required_not_relevant == 1">Not relevant</h2>
+      <h2 *ngIf="treatment?.pain_not_required_not_medically_measurable == 1">Not medically measurable</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="treatment?.temp_not_required == 1 || treatment?.temp_not_required_not_medically_measurable == 1 || treatment?.temp_not_required_not_relevant == 1 || treatment?.temp_not_required_not_technically_measurable == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Temperature measurement not required:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="treatment?.temp_not_required == 1 && treatment?.temp_not_required_not_technically_measurable == 0
+              && treatment?.temp_not_required_not_relevant == 0 && treatment?.temp_not_required_not_medically_measurable == 0">No reason given</h2>
+      <h2 *ngIf="treatment?.temp_not_required_not_technically_measurable == 1">Not technically measurable</h2>
+      <h2 *ngIf="treatment?.temp_not_required_not_relevant == 1">Not relevant</h2>
+      <h2 *ngIf="treatment?.temp_not_required_not_medically_measurable == 1">Not medically measurable</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="treatment?.af_not_required == 1|| treatment?.af_not_required_not_relevant == 1 || treatment?.af_not_required_not_technically_measurable == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>AF measurement not required:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="treatment?.af_not_required == 1 && treatment?.af_not_required_not_technically_measurable == 0
+              && treatment?.af_not_required_not_relevant == 0">No reason given</h2>
+      <h2 *ngIf="treatment?.af_not_required_not_technically_measurable == 1">Not technically measurable</h2>
+      <h2 *ngIf="treatment?.af_not_required_not_relevant == 1">Not relevant</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="treatment?.pulse_not_required == 1 || treatment?.pulse_not_required_not_medically_measurable == 1 || treatment?.pulse_not_required_not_relevant == 1 || treatment?.pulse_not_required_not_technically_measurable == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Pulse measurement not required:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="treatment?.pulse_not_required == 1 && treatment?.pulse_not_required_not_technically_measurable == 0
+              && treatment?.pulse_not_required_not_relevant == 0 && treatment?.pulse_not_required_not_medically_measurable == 0">No reason given</h2>
+      <h2 *ngIf="treatment?.pulse_not_required_not_technically_measurable == 1">Not technically measurable</h2>
+      <h2 *ngIf="treatment?.pulse_not_required_not_relevant == 1">Not relevant</h2>
+      <h2 *ngIf="treatment?.pulse_not_required_not_medically_measurable == 1">Not medically measurable</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="treatment?.sp_o2_not_required == 1 || treatment?.sp_o2_not_required_not_medically_measurable == 1 || treatment?.sp_o2_not_required_not_relevant == 1 || treatment?.sp_o2_not_required_not_technically_measurable == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>SpO2 measurement not required:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="treatment?.sp_o2_not_required == 1 && treatment?.sp_o2_not_required_not_technically_measurable == 0
+              && treatment?.sp_o2_not_required_not_relevant == 0 && treatment?.sp_o2_not_required_not_medically_measurable == 0">No reason given</h2>
+      <h2 *ngIf="treatment?.sp_o2_not_required_not_technically_measurable == 1">Not technically measurable</h2>
+      <h2 *ngIf="treatment?.sp_o2_not_required_not_relevant == 1">Not relevant</h2>
+      <h2 *ngIf="treatment?.sp_o2_not_required_not_medically_measurable == 1">Not medically measurable</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="treatment?.bp_not_required == 1 || treatment?.bp_not_required_not_medically_measurable == 1 || treatment?.bp_not_required_not_relevant == 1 || treatment?.bp_not_required_not_technically_measurable == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Blood pressure measurement not required:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="treatment?.bp_not_required == 1 && treatment?.bp_not_required_not_technically_measurable == 0
+              && treatment?.bp_not_required_not_relevant == 0 && treatment?.bp_not_required_not_medically_measurable == 0">No reason given</h2>
+      <h2 *ngIf="treatment?.bp_not_required_not_technically_measurable == 1">Not technically measurable</h2>
+      <h2 *ngIf="treatment?.bp_not_required_not_relevant == 1">Not relevant</h2>
+      <h2 *ngIf="treatment?.bp_not_required_not_medically_measurable == 1">Not medically measurable</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="treatment?.bz_not_required == 1 || treatment?.blood_sugar_not_required_not_medically_measurable == 1 || treatment?.blood_sugar_not_required_not_relevant == 1 || treatment?.blood_sugar_not_required_not_technically_measurable == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Blood sugar measurement not required:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="treatment?.bz_not_required == 1 && treatment?.blood_sugar_not_required_not_technically_measurable == 0
+              && treatment?.blood_sugar_not_required_not_relevant == 0 && treatment?.blood_sugar_not_required_not_medically_measurable == 0">No reason given</h2>
+      <h2 *ngIf="treatment?.blood_sugar_not_required_not_technically_measurable == 1">Not technically measurable</h2>
+      <h2 *ngIf="treatment?.blood_sugar_not_required_not_relevant == 1">Not relevant</h2>
+      <h2 *ngIf="treatment?.blood_sugar_not_required_not_medically_measurable == 1">Not medically measurable</h2>
+    </div>
+  </div>
+
+  <app-simple-yes-no-detail-display [description]="'COHb measurement not required:'" [input]="treatment?.cohb_not_required"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'EtCO2 measurement not required:'" [input]="treatment?.etc2_not_required"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Patient given medication:'" [input]="treatment?.patient_given_medication"></app-simple-yes-no-detail-display>
+
+</div>

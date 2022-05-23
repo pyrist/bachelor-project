@@ -1,0 +1,10 @@
+<div class="patient-detail-box-container" *ngIf="this.score != 0">
+  <div class="patient-detail-box-description-container">
+    <h2>{{description}}</h2>
+  </div>
+  <div class="patient-detail-box-information-container">
+    <h2 *ngIf="this.score == 1">Normal</h2>
+    <h2 *ngIf="this.score == 2">Reduced</h2>
+    <h2 *ngIf="this.score == 3">None</h2>
+  </div>
+</div>

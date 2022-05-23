@@ -1,0 +1,38 @@
+<div class="header"><h1>- BODY SENSITIVITY -</h1></div>
+<div class="patient-detail-container">
+  <app-pupil-detail-display *ngIf="bodySensitivity?.pupil_left_assessment_exam_dest_dyscoria == 1 || bodySensitivity?.pupil_left_assessment_exam_dest_middle == 1 || bodySensitivity?.pupil_left_assessment_exam_dest_wide == 1 || bodySensitivity?.pupil_left_assessment_exam_dest_narrow == 1 || bodySensitivity?.pupil_left_assessment_exam_dest_not_determinable == 1"
+                            [description]="'Left pupil status:'"
+                            [dyscoria]="bodySensitivity?.pupil_left_assessment_exam_dest_dyscoria"
+                            [middle]="bodySensitivity?.pupil_left_assessment_exam_dest_middle"
+                            [wide]="bodySensitivity?.pupil_left_assessment_exam_dest_wide"
+                            [narrow]="bodySensitivity?.pupil_left_assessment_exam_dest_narrow"
+                            [notDeterminable]="bodySensitivity?.pupil_left_assessment_exam_dest_not_determinable"></app-pupil-detail-display>
+
+  <app-pupil-detail-display *ngIf="bodySensitivity?.pupil_right_assessment_exam_dest_dyscoria == 1 || bodySensitivity?.pupil_right_assessment_exam_dest_middle == 1 || bodySensitivity?.pupil_right_assessment_exam_dest_wide == 1 || bodySensitivity?.pupil_right_assessment_exam_dest_narrow == 1 || bodySensitivity?.pupil_right_assessment_exam_dest_not_determinable == 1"
+                            [description]="'Right pupil status:'"
+                            [dyscoria]="bodySensitivity?.pupil_right_assessment_exam_dest_dyscoria"
+                            [middle]="bodySensitivity?.pupil_right_assessment_exam_dest_middle"
+                            [wide]="bodySensitivity?.pupil_right_assessment_exam_dest_wide"
+                            [narrow]="bodySensitivity?.pupil_right_assessment_exam_dest_narrow"
+                            [notDeterminable]="bodySensitivity?.pupil_right_assessment_exam_dest_not_determinable"></app-pupil-detail-display>
+
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.movement_of_the_extremities_left_arm != 0" [description]= "'Inpatient left arm movement:'" [score]="bodySensitivity?.movement_of_the_extremities_left_arm"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.movement_of_the_extremities_right_arm != 0" [description]= "'Inpatient right arm movement:'" [score]="bodySensitivity?.movement_of_the_extremities_right_arm"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.movement_of_the_extremities_left_arm_assessment_exam_dest != 0" [description]= "'Left arm movement at location:'" [score]="bodySensitivity?.movement_of_the_extremities_left_arm_assessment_exam_dest"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.movement_of_the_extremities_right_arm_assessment_exam_dest != 0" [description]= "'Right arm movement at location:'" [score]="bodySensitivity?.movement_of_the_extremities_right_arm_assessment_exam_dest"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.movement_of_the_extremities_left_leg != 0" [description]= "'Inpatient left leg movement:'" [score]="bodySensitivity?.movement_of_the_extremities_left_leg"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.movement_of_the_extremities_right_leg != 0" [description]= "'Inpatient right leg movement:'" [score]="bodySensitivity?.movement_of_the_extremities_right_leg"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.movement_of_the_extremities_left_leg_assessment_exam_dest != 0" [description]= "'Left leg movement at location:'" [score]="bodySensitivity?.movement_of_the_extremities_left_leg_assessment_exam_dest"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.movement_of_the_extremities_right_leg_assessment_exam_dest != 0" [description]= "'Right leg movement at location:'" [score]="bodySensitivity?.movement_of_the_extremities_right_leg_assessment_exam_dest"></app-sensibility-score-detail-display>
+
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.sensibility_left_arm != 0" [description]= "'Inpatient left arm sensibility:'" [score]="bodySensitivity?.sensibility_left_arm"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.sensibility_right_arm != 0" [description]= "'Inpatient right arm sensibility:'" [score]="bodySensitivity?.sensibility_right_arm"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.sensibility_left_arm_assessment_exam_dest != 0" [description]= "'Left arm sensibility at location:'" [score]="bodySensitivity?.sensibility_left_arm_assessment_exam_dest"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.sensibility_right_arm_assessment_exam_dest != 0" [description]= "'Right arm sensibility at location:'" [score]="bodySensitivity?.sensibility_right_arm_assessment_exam_dest"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.sensibility_left_leg != 0" [description]= "'Inpatient left leg sensibility:'" [score]="bodySensitivity?.sensibility_left_leg"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.sensibility_right_leg != 0" [description]= "'Inpatient right leg sensibility:'" [score]="bodySensitivity?.sensibility_right_leg"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.sensibility_left_leg_assessment_exam_dest != 0" [description]= "'Left leg sensibility at location:'" [score]="bodySensitivity?.sensibility_left_leg_assessment_exam_dest"></app-sensibility-score-detail-display>
+  <app-sensibility-score-detail-display *ngIf="bodySensitivity?.sensibility_right_leg_assessment_exam_dest != 0" [description]= "'Right leg sensibility at location:'" [score]="bodySensitivity?.sensibility_right_leg_assessment_exam_dest"></app-sensibility-score-detail-display>
+
+  <app-table-result-display [normal]="bodySensitivity?.normal_table_result" [abnormal]="bodySensitivity?.abnormal_table_result" [severe]="bodySensitivity?.severe_table_result"></app-table-result-display>
+</div>

@@ -1,0 +1,29 @@
+<div class="header"><h1>- BASIC CONDITION -</h1></div>
+<div class="patient-detail-container">
+  <div class="patient-comment-box-container" *ngIf="conditionBasic?.text_observation_circulation_comment != null">
+    <h2>(Original text) Circulation observation:</h2>
+    <div class="patient-detail-box-information-container">
+      <h2>{{conditionBasic?.text_observation_circulation_comment}}</h2>
+    </div>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionBasic?.text_primary_assessment_circulation_comment != null">
+    <h2>(Original text) Primary circulation comment:</h2>
+    <div class="patient-detail-box-information-container">
+      <h2>{{conditionBasic?.text_primary_assessment_circulation_comment}}</h2>
+    </div>
+  </div>
+
+  <app-simple-yes-no-detail-display *ngIf="conditionBasic?.no_disease_determined != null" [description]="'No disease determined:'" [input]="conditionBasic?.no_disease_determined"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display *ngIf="conditionBasic?.no_vitals != null" [description]="'No vitals:'" [input]="conditionBasic?.no_vitals"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Normal in hospital:'" [input]="conditionBasic?.normal"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Normal at destination:'" [input]="conditionBasic?.normal_assessment_exam_dest"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Jaundice:'" [input]="conditionBasic?.jaundice"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Hypertension:'" [input]="conditionBasic?.hypertension"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Hypotension:'" [input]="conditionBasic?.hypotension"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Tachycardia:'" [input]="conditionBasic?.tachycardia"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Cold skin:'" [input]="conditionBasic?.cold_skin"></app-simple-yes-no-detail-display>
+  <app-simple-yes-no-detail-display [description]="'Warm skin:'" [input]="conditionBasic?.warm_skin"></app-simple-yes-no-detail-display>
+
+  <app-table-result-display [normal]="conditionBasic?.normal_table_result" [abnormal]="conditionBasic?.abnormal_table_result" [severe]="conditionBasic?.severe_table_result"></app-table-result-display>
+</div>

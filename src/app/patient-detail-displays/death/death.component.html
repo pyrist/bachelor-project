@@ -1,0 +1,35 @@
+<div class="header"><h1>- DEATH -</h1></div>
+<div class="patient-detail-container">
+  <div class="patient-detail-box-container" *ngIf="death?.reason_cpr_discontinued_dnr == 1 || death?.reason_cpr_discontinued_underlying_disease_known == 1  || death?.reason_cpr_discontinued_other_factors == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Reason CPR discontinued:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="death?.reason_cpr_discontinued_dnr == 1">Existing DNR</h2>
+      <h2 *ngIf="death?.reason_cpr_discontinued_underlying_disease_known == 1">Underlying disease</h2>
+      <h2 *ngIf="death?.reason_cpr_discontinued_other_factors == 1">Other factors</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="death?.death_result_death_at_location == 1 || death?.death_result_hospital_admission_ongoing_resuscitation == 1  || death?.death_result_hospital_admission_ongoing_resuscitation == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Result:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="death?.death_result_death_at_location == 1">Death at location</h2>
+      <h2 *ngIf="death?.death_result_hospital_admission_ongoing_resuscitation == 1">Admitted during resuscitation</h2>
+      <h2 *ngIf="death?.death_result_hospital_admission_ROSC == 1">Admitted after ROSC</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="death?.ascertainment_of_death_natural == 1 || death?.ascertainment_of_death_unknown == 1  || death?.ascertainment_of_death_unnatural == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Cause:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="death?.ascertainment_of_death_natural == 1">Natural</h2>
+      <h2 *ngIf="death?.ascertainment_of_death_unnatural == 1">Unnatural</h2>
+      <h2 *ngIf="death?.ascertainment_of_death_unknown == 1">Unknown</h2>
+    </div>
+  </div>
+</div>
