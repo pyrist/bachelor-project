@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { categories } from '../../categories';
 import {Router} from "@angular/router";
 
@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   templateUrl: './category-selection.component.html',
   styleUrls: ['./category-selection.component.css']
 })
-export class CategorySelectionComponent implements OnInit {
+export class CategorySelectionComponent {
   categories = categories
 
   constructor(private router: Router) { }
@@ -15,8 +15,4 @@ export class CategorySelectionComponent implements OnInit {
   goToCategoryDetails(linkname: string) {
     this.router.navigateByUrl('/categories/' + linkname);
   }
-
-  ngOnInit(): void {
-  }
-
 }

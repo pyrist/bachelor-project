@@ -11,5 +11,4 @@ export class TextCleanerService {
     var result = input ? input.replace(/(^,)|(,$)/g, '') : ""
     return result.charAt(0).toUpperCase() + result.slice(1);
   }
-
 }

@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category, categories } from '../../categories';
-import { Apollo, gql } from 'apollo-angular';
-import {saveAs} from "file-saver";
-import {finalize, takeUntil} from "rxjs";
+import { Apollo } from 'apollo-angular';
+import { saveAs } from "file-saver";
 import { HttpClient } from "@angular/common/http";
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-category-details',
@@ -16,9 +13,7 @@ import { catchError, retry } from 'rxjs/operators';
 export class CategoryDetailsComponent implements OnInit {
   category: Category | undefined;
   loading = false;
-  totalCsvArray = new Blob();
   rounds: number | undefined;
-  roundsComplete = 0;
   constructor(private apollo: Apollo, private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {

@@ -6,16 +6,12 @@ import { Router } from '@angular/router';
   templateUrl: './case-search.component.html',
   styleUrls: ['./case-search.component.css']
 })
-export class CaseSearchComponent implements OnInit {
+export class CaseSearchComponent{
   @Input() caseId?: number;
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
-
   search() {
     this.router.navigateByUrl('/patients/' + this.caseId);
   }
-
 }
