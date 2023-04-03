@@ -1,0 +1,33 @@
+<ng-http-loader></ng-http-loader>
+<div class = patient-container>
+  <div class="sticky">
+    <div class="patient-basic-information-container">
+      <h1>Patient information</h1>
+      <h2 *ngIf="this.patient == null && !this.loading">No patient found with that case ID!</h2>
+      <h2 *ngFor="let info of patientBasicInformation">{{info}}</h2>
+      <br>
+      <div class="patient-header">
+        <button (click)="retrieveCsv(caseId)">Download</button>
+        <button *ngIf="diagnosis != 'No diagnosis'" (click)="retrieveCsvForDiagnosis(caseId, diagnosisLink)">Download for this diagnosis</button>
+      </div>
+    </div>
+  </div>
+    <div class="patient-information-container">
+      <app-blood-pressure [id]="patient?.blood_pressure_id" *ngIf="patient?.blood_pressure_id != null"></app-blood-pressure>
+      <app-body-sensitivity [id]="patient?.body_sensitivity_id" *ngIf="patient?.body_sensitivity_id != null"></app-body-sensitivity>
+      <app-cardio [id]="patient?.cardio_id" *ngIf="patient?.cardio_id != null"></app-cardio>
+      <app-condition-basic [id]="patient?.condition_basic_id" *ngIf="patient?.condition_basic_id != null"></app-condition-basic>
+      <app-condition-consciousness [id]="patient?.condition_consciousness_id" *ngIf="patient?.condition_consciousness_id != null"></app-condition-consciousness>
+      <app-condition-mental [id]="patient?.condition_mental_id" *ngIf="patient?.condition_mental_id != null"></app-condition-mental>
+      <app-condition-history [id]="patient?.condition_pre_id" *ngIf="patient?.condition_pre_id != null"></app-condition-history>
+      <app-condition-vitals [id]="patient?.condition_vitals_id" *ngIf="patient?.condition_vitals_id != null"></app-condition-vitals>
+      <app-expert-comments [id]="patient?.expert_comment_id" *ngIf="patient?.expert_comment_id != null"></app-expert-comments>
+      <app-illness-assessment [id]="patient?.illness_assessment_id" *ngIf="patient?.illness_assessment_id != null"></app-illness-assessment>
+      <app-injury [id]="patient?.injury_id" *ngIf="patient?.injury_id != null"></app-injury>
+      <app-intervention [id]="patient?.intervention_id" *ngIf="patient?.intervention_id != null"></app-intervention>
+      <app-neurology [id]="patient?.neurology_id" *ngIf="patient?.neurology_id != null"></app-neurology>
+      <app-respiratory [id]="patient?.respiratory_id" *ngIf="patient?.respiratory_id != null"></app-respiratory>
+      <app-treatment [id]="patient?.treatment_id" *ngIf="patient?.treatment_id != null"></app-treatment>
+      <app-death [id]="patient?.death_id" *ngIf="patient?.death_id != null"></app-death>
+    </div>
+  </div>

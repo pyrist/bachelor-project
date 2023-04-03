@@ -1,0 +1,38 @@
+.patient-basic-information-container{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  align-content: normal;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.patient-header{
+  text-align:left;
+}
+
+.patient-information-container{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  row-gap: 50px;
+}
+
+button{
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.patient-container{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 25% 75%;
+}
+
+.sticky{
+  position: sticky;
+  top: 102px;
+  width: 100%;
+  align-self: start;
+}
+

@@ -1,0 +1,237 @@
+/* Based on the "Getting started" Angular tutorial project */
+
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #202327;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.header {
+  text-align:center;
+}
+
+.patient-detail-container{
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+  justify-content: center;
+  width: 90%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
+}
+
+.patient-detail-box-container, .patient-comment-box-container, .patient-large-comment-box-container {
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 20%);
+  border-radius: 2px;
+}
+
+.patient-detail-box-container{
+  display: grid;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 10px 10px 0px;
+  grid-template-columns: 60% auto;
+  row-gap: 10px;
+  border: thin solid #a9a9a9;
+  height: 100%;
+}
+
+.patient-comment-box-container{
+  display: grid;
+  align-content: center;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-right: 10px;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 10px;
+  border: thin solid #a9a9a9;
+}
+
+.patient-large-comment-box-container{
+  display: grid;
+  align-content: center;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-right: 10px;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 10px;
+  border: thin solid #a9a9a9;
+  grid-column: 1 / -1;
+}
+
+.patient-detail-box-description-container{
+  display: block;
+  min-width: auto;
+  max-width: 200px;
+  padding-left: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.patient-detail-box-information-container{
+  display: block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 10px;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+router-outlet + *  {
+  padding: 0 16px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+h1, h2 {
+  font-weight: lighter;
+}
+
+p {
+  font-size: 14px;
+}
+
+
+input {
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1mm;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.button, button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #202327;
+  border: thin solid #202327;
+  background-color: transparent;
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+
+.button:hover, button:hover {
+  background-color: #202327;
+  opacity: 0.8;
+  color: #fff;
+  font-weight: normal;
+  transform: scale(1.05);
+}
+
+.button:disabled, button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.fancy-button {
+  color: #fff;
+  background-color: #202327;
+}
+
+.fancy-button mat-icon {
+  color: #202327;
+  padding-right: 4px;
+}
+
+app-top-bar {
+  width: 100%;
+  height: 68px;
+  background-color: #2e3138;
+  padding: 16px;
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+}
+
+app-top-bar h1 {
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+app-navigation-bar {
+  width: 100%;
+  height: 34px;
+  background-color: #202327;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+app-navigation-bar h2 {
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+app-navigation-bar a {
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; height: fit-content; }
+
+.center-container{
+  ion: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.patient-detail-container h2 {
+  font-size: 1.1em;
+}

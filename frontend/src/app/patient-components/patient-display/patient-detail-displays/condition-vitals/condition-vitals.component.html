@@ -1,0 +1,99 @@
+<div class="header"><h1>- VITALS -</h1></div>
+<div class="patient-detail-container">
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.hr != null || conditionVitals?.pulse_rate != null || conditionVitals?.pulse_rate_assess_vital_signs_destination != null || conditionVitals?.hr_assess_vital_signs_destination != null || conditionVitals?.hr_vital_trend_tables_hr != null">
+    <h2>Heart rate measurements:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.hr_vital_trend_tables_hr, conditionVitals?.hr, conditionVitals?.pulse_rate, conditionVitals?.pulse_rate_assess_vital_signs_destination, conditionVitals?.hr_assess_vital_signs_destination]) + ' bpm'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.bs != null || conditionVitals?.blood_glucose_level != null || conditionVitals?.blood_glucose_level_assess_vital_signs_destination != null">
+    <h2>Blood glucose measurements:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.bs, conditionVitals?.blood_glucose_level, conditionVitals?.blood_glucose_level_assess_vital_signs_destination]) + ' mg/dl'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.temp != null || conditionVitals?.body_temperature_assess_vital_signs_destination != null || conditionVitals?.body_temperature != null">
+    <h2>Body temperature measurements:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.temp, conditionVitals?.body_temperature, conditionVitals?.body_temperature_assess_vital_signs_destination]) + '°C'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.etc_o2_1 != null || conditionVitals?.etc_o2_2 != null || conditionVitals?.etco2_assess_vital_signs_destination != null">
+    <h2>EtCO2 measurements:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.etc_o2_1, conditionVitals?.etco2_assess_vital_signs_destination, conditionVitals?.etc_o2_2]) + ' mmHg'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.cohb_1 != null || conditionVitals?.cohb_2 != null || conditionVitals?.cohb_assess_vital_signs_destination != null">
+    <h2>COHb measurements:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.cohb_1, conditionVitals?.cohb_2, conditionVitals?.cohb_assess_vital_signs_destination]) + '%'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.pulse_oximetry != null || conditionVitals?.pulse_oximetry_assess_vital_signs_destination != null || conditionVitals?.sp_o2 != null">
+    <h2>Pulse oximetry measurements:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.pulse_oximetry, conditionVitals?.pulse_oximetry_assess_vital_signs_destination, conditionVitals?.sp_o2]) + '%'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.pulse_oximetry_under_oxygen != null || conditionVitals?.pulse_oximetry_under_oxygen_assess_vital_signs_destination != null">
+    <h2>Pulse oximetry measurements while under oxygen:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.pulse_oximetry_under_oxygen, conditionVitals?.pulse_oximetry_under_oxygen_assess_vital_signs_destination]) + '%'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.co2 != null || conditionVitals?.co2_assess_vital_signs_destination != null">
+    <h2>CO2 measurements:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.co2, conditionVitals?.co2_assess_vital_signs_destination]) + ' mEq/L'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.rr != null || conditionVitals?.respiratory_rate != null">
+    <h2>Respiration rate measurements:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.rr, conditionVitals?.respiratory_rate]) + ' rpm'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="conditionVitals?.vas != null || conditionVitals?.pain_scale != null">
+    <h2>Pain:</h2>
+    <h2>{{arrayToString.arrayToString([conditionVitals?.vas, conditionVitals?.pain_scale]) + '/10'}}</h2>
+  </div>
+
+  <div class="patient-comment-box-container" *ngIf="bloodPressures?.length != 0">
+    <h2>Blood pressure measurements:</h2>
+    <h2>
+      <div *ngFor="let measurement of bloodPressures">
+        <div class="frac">
+          <span>{{measurement[0]}}</span>
+          <span class="symbol">/</span>
+          <span class="bottom">{{measurement[1]}}</span>
+        </div>
+      </div>
+    </h2>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="conditionVitals?.blood_glucose_too_low == 1 || conditionVitals?.blood_glucose_too_high == 1 || conditionVitals?.blood_glucose_too_high_destination == 1 || conditionVitals?.blood_glucose_too_low_destination == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Blood glucose summary:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="conditionVitals?.blood_glucose_too_low == 1">Too low inpatient</h2>
+      <h2 *ngIf="conditionVitals?.blood_glucose_too_high == 1">Too high inpatient</h2>
+      <h2 *ngIf="conditionVitals?.blood_glucose_too_low_destination == 1">Too low at location</h2>
+      <h2 *ngIf="conditionVitals?.blood_glucose_too_high_destination == 1">Too high at location</h2>
+    </div>
+  </div>
+
+  <div class="patient-detail-box-container" *ngIf="conditionVitals?.pulse_rhythm_regular == 1 || conditionVitals?.pulse_rhythm_regular_destination == 1 || conditionVitals?.pulse_rhythm_irregular == 1 || conditionVitals?.pulse_rhythm_irregular_destination == 1">
+    <div class="patient-detail-box-description-container">
+      <h2>Pulse rhythm summary:</h2>
+    </div>
+    <div class="patient-detail-box-information-container">
+      <h2 *ngIf="conditionVitals?.pulse_rhythm_regular == 1">Regular inpatient</h2>
+      <h2 *ngIf="conditionVitals?.pulse_rhythm_irregular == 1">Irregular inpatient</h2>
+      <h2 *ngIf="conditionVitals?.pulse_rhythm_regular_destination == 1">Regular at location</h2>
+      <h2 *ngIf="conditionVitals?.pulse_rhythm_irregular_destination == 1">Irregular at location</h2>
+    </div>
+  </div>
+
+  <app-simple-variable-display *ngIf = "conditionVitals?.po2 != null" [description]="'PO2 measurement:'" [input]="conditionVitals?.po2 + ' mmHg'"></app-simple-variable-display>
+  <app-simple-variable-display *ngIf = "conditionVitals?.pco2 != null" [description]="'PCO2 measurement:'" [input]="conditionVitals?.pco2 + ' mmHg'"></app-simple-variable-display>
+  <app-simple-variable-display *ngIf = "conditionVitals?.ph != null" [description]="'pH measurement:'" [input]="conditionVitals?.ph"></app-simple-variable-display>
+  <app-simple-variable-display *ngIf = "conditionVitals?.sbic != null" [description]="'SBCe measurement:'" [input]="conditionVitals?.sbic + ' mmol/l'"></app-simple-variable-display>
+  <app-simple-variable-display *ngIf = "conditionVitals?.co != null" [description]="'CO measurement:'" [input]="conditionVitals?.co"></app-simple-variable-display>
+
+  <app-simple-yes-no-detail-display *ngIf="conditionVitals?.no_vitals_assess_vital_signs_destination != null" [description]="'No vitals at destination'" [input]="conditionVitals?.no_vitals_assess_vital_signs_destination"></app-simple-yes-no-detail-display>
+
+  <app-table-result-display [normal]="conditionVitals?.normal_table_result" [abnormal]="conditionVitals?.abnormal_table_result" [severe]="conditionVitals?.severe_table_result"></app-table-result-display>
+</div>

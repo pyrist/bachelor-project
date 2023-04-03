@@ -1,0 +1,29 @@
+.category-details-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display:block;
+  align-content: center;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  padding-top: 20px
+}
+
+.bullet-point-container{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+li:first-letter{
+  text-transform: uppercase;
+}
+
+ul{
+  display: grid;
+  column-gap: 100px;
+  grid-template-columns: auto auto;
+  text-align: left;
+}

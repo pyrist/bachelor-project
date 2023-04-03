@@ -1,8 +1,9 @@
 const {app, BrowserWindow } = require('electron');
-const url = require('url');
-const path = require("path");
+const expressApp = require('./api')
 
 let mainWindow
+
+expressApp()
 
 function createWindow () {
   mainWindow = new BrowserWindow({
@@ -11,13 +12,13 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
-    autoHideMenuBar: true,
-    useContentSize: true,
+    autoHideMenuBar: true
   })
 
-  mainWindow.loadFile(`./dist/project/index.html`);
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.loadFile(`./frontend/dist/project/index.html`);
+  /*
+  mainWindow.webContents.openDevTools()
+  */
 
   mainWindow.on('closed', function () {
     mainWindow = null
